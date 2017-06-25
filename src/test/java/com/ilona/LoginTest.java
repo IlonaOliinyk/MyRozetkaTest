@@ -5,15 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.util.concurrent.TimeUnit;
-
 public class LoginTest {
 
     private WebDriver driver;
 
     @BeforeMethod
-    public void rozetkaSetUp() {
-        driver = BrowserFactory.getBrowser(0);
+    @Parameters({"browser"})
+    public void rozetkaSetUp(String browser) {
+        driver = BrowserFactory.getBrowser(browser);
         String baseUrl = "http://rozetka.com.ua/ua/";
         driver.get(baseUrl);
     }

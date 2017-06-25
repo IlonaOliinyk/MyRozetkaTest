@@ -11,26 +11,25 @@ import java.util.concurrent.TimeUnit;
 
 public class BrowserFactory {
 
-    public static WebDriver getBrowser(int i) {
+    public static WebDriver getBrowser(String browser) {
         WebDriver driver;
-        switch (i) {
-            case 0:
-                System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_25.exe");
-                driver = new ChromeDriver();
-                break;
-            case 1:
+        switch (browser) {
+            case "firefox":
                 driver = new FirefoxDriver();
                 break;
-            case 2:
+            case "ie":
                 System.setProperty("webdriver.ie.driver","src/resources/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
                 break;
-            case 3:
+            case "opera":
                 System.setProperty("webdriver.opera.driver", "D:/Ripon/operadriver_win64/operadriver.exe");
                 driver = new OperaDriver();
                 break;
+            case "chrome":
             default:
-                driver = new FirefoxDriver();
+                System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_25.exe");
+                driver = new ChromeDriver();
+                break;
         }
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         return driver;

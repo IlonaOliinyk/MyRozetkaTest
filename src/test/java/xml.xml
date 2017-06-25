@@ -2,11 +2,13 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="Login_test">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.ilona.LoginTest" />
         </classes>
     </test>
     <test name="Search_test">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.ilona.SearchTest" />
         </classes>
