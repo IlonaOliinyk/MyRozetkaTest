@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 
 public class SearchTest {
+
     private WebDriver driver;
 
     @BeforeMethod
@@ -25,6 +26,7 @@ public class SearchTest {
         hp.search("samsung");
         Thread.sleep(3000);
         String firstLinkText = hp.getFirstLinkText().toLowerCase();
+        hp.takeScrinshot();
         System.out.println("TEXT: " + firstLinkText);
         Assert.assertTrue(firstLinkText.contains("samsung"));
     }
@@ -35,13 +37,13 @@ public class SearchTest {
         hp.search("lenovo");
         Thread.sleep(3000);
         String firstLinkText = hp.getFirstLinkText().toLowerCase();
+        hp.takeScrinshot();
         System.out.println("TEXT: " + firstLinkText);
         Assert.assertFalse(firstLinkText.contains("samsung"));
     }
 
-        @AfterMethod
-        public void tearDown () {
-            driver.quit();
-        }
-
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }

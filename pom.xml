@@ -48,8 +48,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.20</version>
         <configuration>
-          <parallel>methods</parallel>
-          <threadCount>1</threadCount>
           <suiteXmlFiles>
             <suiteXmlFile>src/test/java/xml.xml</suiteXmlFile>
           </suiteXmlFiles>
