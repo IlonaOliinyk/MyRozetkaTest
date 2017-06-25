@@ -18,16 +18,16 @@ public class BrowserFactory {
                 driver = new FirefoxDriver();
                 break;
             case "ie":
-                System.setProperty("webdriver.ie.driver","src/resources/IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", "src/resources/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
                 break;
             case "opera":
-                System.setProperty("webdriver.opera.driver", "D:/Ripon/operadriver_win64/operadriver.exe");
+                System.setProperty("webdriver.opera.driver", "src/resources/operadriver.exe");
                 driver = new OperaDriver();
                 break;
             case "chrome":
             default:
-                System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_25.exe");
+                System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
         }
