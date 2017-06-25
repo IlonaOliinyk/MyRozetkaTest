@@ -1,17 +1,12 @@
 package com.ilona;
 
-import org.apache.commons.lang3.text.StrBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import javax.print.attribute.SetOfIntegerSyntax;
+public class HomePage extends AbstractPage {
 
-public class HomePage {
-
-    private WebDriver driver;
-
-    public HomePage (WebDriver driver){
-        this.driver = driver;
+    public HomePage(WebDriver driver) {
+        super(driver);
     }
 
     public String getUserName() {

@@ -4,12 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class WelcomePage {
+public class WelcomePage extends AbstractPage {
 
-    private WebDriver driver;
-
-    public WelcomePage(WebDriver driver){
-        this.driver=driver;
+    public WelcomePage(WebDriver driver) {
+        super(driver);
     }
 
     public HomePage positiveLogin(String email, String password) {
